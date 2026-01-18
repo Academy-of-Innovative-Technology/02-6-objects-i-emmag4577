@@ -10,15 +10,6 @@ var theranos = {
   wiki: "https://en.wikipedia.org/wiki/Elizabeth_Holmes"
 };
 
-
-titles[0].innerText = `${theranos.lastName}, ${theranos.firstName}`;
-let currentYear = new Date().getFullYear();
-texts[0].innerText = `Year Born: ${currentYear - theranos.age}`;
-texts[1].innerHTML = ...
-imgs[0].src = theranos.img;
-buttons[0].href = theranos.wiki;
-
-
 var elonMusk = {
   firstName: "Elon",
   middleName: "Reeve",
@@ -51,18 +42,4 @@ var hero = {
 
 var profiles = [theranos, elonMusk, hero];
 
-profiles.forEach((person, index) => {
-  imgs[index].src = person.img;
-  titles[index].innerText = `${person.lastName}, ${person.firstName}`;
-
-  texts[index * 2].innerText =
-    `Year Born: ${new Date().getFullYear() - person.age}`;
-
-  let eduText = "";
-  person.education.forEach((school, i) => {
-    eduText += `${i + 1} College: ${school}<br>`;
-  });
-
-  texts[index * 2 + 1].innerHTML = eduText;
-  buttons[index].href = person.wiki;
-});
+profiles.forEac
