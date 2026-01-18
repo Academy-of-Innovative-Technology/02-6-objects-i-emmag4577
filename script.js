@@ -16,7 +16,7 @@ var profiles = [
       "Stanford University",
       "Wharton School of the University of Pennsylvania"
     ],
-    img: "https://upload.wikimedia.org/wikipedia/commons/e/ed/Elon_Musk_Royal_Society_%28crop2%29.jpg",
+    img: "https://www.google.com/url?sa=t&source=web&rct=j&url=https%3A%2F%2Fwww.biography.com%2Fbusiness-leaders%2Felon-musk&ved=0CBUQjRxqFwoTCOCAyYiRlpIDFQAAAAAdAAAAABAH&opi=89978449",
     wiki: "https://en.wikipedia.org/wiki/Elon_Musk"
   },
   {
@@ -24,7 +24,7 @@ var profiles = [
     lastName: "Morales",
     age: 17,
     education: ["Brooklyn Visions Academy"],
-    img: "https://upload.wikimedia.org/wikipedia/en/3/32/Miles_Morales_%28Spider-Man%29.png",
+    img: "https://reactormag.com/wp-content/uploads/2023/06/Miles-Across-the-Spider-Verse.png",
     wiki: "https://en.wikipedia.org/wiki/Miles_Morales"
   }
 ];
