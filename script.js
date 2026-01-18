@@ -1,27 +1,52 @@
-var theranos = {
-  firstName: "Elizabeth",
-  lastName: "Holmes",
-  age: new Date().getFullYear() - 1984,
-  education: [
-    "St. John University",
-    "Stanford University"
-  ],
-  img: "https://startupi.com.br/wp-content/uploads/2023/08/20160711elizabeth-holmes.jpg",
-  wiki: "https://en.wikipedia.org/wiki/Elizabeth_Holmes"
-};
+var profiles = [
+  {
+    firstName: "Elizabeth",
+    lastName: "Holmes",
+    age: new Date().getFullYear() - 1984,
+    education: ["St. John University", "Stanford University"],
+    img: "https://startupi.com.br/wp-content/uploads/2023/08/20160711elizabeth-holmes.jpg",
+    wiki: "https://en.wikipedia.org/wiki/Elizabeth_Holmes"
+  },
+  {
+    firstName: "Elon",
+    lastName: "Musk",
+    age: 48,
+    education: [
+      "Queens College",
+      "Stanford University",
+      "Wharton School of the University of Pennsylvania"
+    ],
+    img: "https://upload.wikimedia.org/wikipedia/commons/e/ed/Elon_Musk_Royal_Society_%28crop2%29.jpg",
+    wiki: "https://en.wikipedia.org/wiki/Elon_Musk"
+  },
+  {
+    firstName: "Miles",
+    lastName: "Morales",
+    age: 17,
+    education: ["Brooklyn Visions Academy"],
+    img: "https://upload.wikimedia.org/wikipedia/en/3/32/Miles_Morales_%28Spider-Man%29.png",
+    wiki: "https://en.wikipedia.org/wiki/Miles_Morales"
+  }
+];
 
-var img = document.querySelector("img");
-var title = document.querySelector(".card-title");
-var ageText = document.querySelector(".card-text");
-var educationText = document.querySelector(".small");
-var button = document.querySelector(".btn");
+var container = document.getElementById("staff-container");
+var templateCard = container.querySelector("article");
 
-img.src = theranos.img;
-title.innerText = `${theranos.lastName}, ${theranos.firstName}`;
-ageText.innerText = `Year Born: ${new Date().getFullYear() - theranos.age}`;
+profiles.forEach((person, index) => {
+  var card = index === 0 ? templateCard : templateCard.cloneNode(true);
 
-educationText.innerHTML =
-  `First College: ${theranos.education[0]}<br>
-   Second College: ${theranos.education[1]}`;
+  card.querySelector("img").src = person.img;
+  card.querySelector(".card-title").innerText =
+    `${person.lastName}, ${person.firstName}`;
+  card.querySelector(".card-text").innerText =
+    `Year Born: ${new Date().getFullYear() - person.age}`;
+  card.querySelector(".small").innerHTML =
+    person.education.map(
+      (school, i) => `${i + 1} College: ${school}`
+    ).join("<br>");
+  card.querySelector(".btn").href = person.wiki;
 
-button.href = theranos.wiki;
+  if (index !== 0) {
+    container.appendChild(card);
+  }
+});
