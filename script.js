@@ -39,7 +39,15 @@ var hero = {
   img: "https://upload.wikimedia.org/wikipedia/en/3/32/Miles_Morales_%28Spider-Man%29.png",
   wiki: "https://en.wikipedia.org/wiki/Miles_Morales"
 };
-
 var profiles = [theranos, elonMusk, hero];
 
-profiles.forEac
+profiles.forEach((person, index) => {
+  imgs[index].src = person.img;
+  titles[index].innerText = `${person.lastName}, ${person.firstName}`;
+  texts[index * 2].innerText =
+    `Year Born: ${new Date().getFullYear() - person.age}`;
+  texts[index * 2 + 1].innerHTML = person.education
+    .map((school, i) => `${i + 1} College: ${school}`)
+    .join("<br>");
+  buttons[index].href = person.wiki;
+});
