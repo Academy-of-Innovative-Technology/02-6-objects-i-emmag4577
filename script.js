@@ -10,44 +10,18 @@ var theranos = {
   wiki: "https://en.wikipedia.org/wiki/Elizabeth_Holmes"
 };
 
-var elonMusk = {
-  firstName: "Elon",
-  middleName: "Reeve",
-  lastName: "Musk",
-  age: 48,
-  education: [
-    "Queens College",
-    "Stanford University",
-    "Wharton School of the University of Pennsylvania"
-  ],
-  img: "https://upload.wikimedia.org/wikipedia/commons/e/ed/Elon_Musk_Royal_Society_%28crop2%29.jpg",
-  wiki: "https://en.wikipedia.org/wiki/Elon_Musk"
-};
+var img = document.querySelector("img");
+var title = document.querySelector(".card-title");
+var ageText = document.querySelector(".card-text");
+var educationText = document.querySelector(".small");
+var button = document.querySelector(".btn");
 
-var hero = {
-  firstName: "Miles",
-  middleName: "G",
-  lastName: "Morales",
-  age: 17,
-  education: [
-    "Brooklyn Visions Academy"
-  ],
-  occupation: "Superhero",
-  skills: ["Web-slinging", "Invisibility", "Combat"],
-  hometown: "Brooklyn, NY",
-  comic: "Spider-Man: Miles Morales",
-  img: "https://upload.wikimedia.org/wikipedia/en/3/32/Miles_Morales_%28Spider-Man%29.png",
-  wiki: "https://en.wikipedia.org/wiki/Miles_Morales"
-};
-var profiles = [theranos, elonMusk, hero];
+img.src = theranos.img;
+title.innerText = `${theranos.lastName}, ${theranos.firstName}`;
+ageText.innerText = `Year Born: ${new Date().getFullYear() - theranos.age}`;
 
-profiles.forEach((person, index) => {
-  imgs[index].src = person.img;
-  titles[index].innerText = `${person.lastName}, ${person.firstName}`;
-  texts[index * 2].innerText =
-    `Year Born: ${new Date().getFullYear() - person.age}`;
-  texts[index * 2 + 1].innerHTML = person.education
-    .map((school, i) => `${i + 1} College: ${school}`)
-    .join("<br>");
-  buttons[index].href = person.wiki;
-});
+educationText.innerHTML =
+  `First College: ${theranos.education[0]}<br>
+   Second College: ${theranos.education[1]}`;
+
+button.href = theranos.wiki;
