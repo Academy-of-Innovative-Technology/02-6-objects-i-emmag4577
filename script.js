@@ -16,7 +16,7 @@ var profiles = [
       "Stanford University",
       "Wharton School of the University of Pennsylvania"
     ],
-    img: "https://www.google.com/url?sa=t&source=web&rct=j&url=https%3A%2F%2Fwww.biography.com%2Fbusiness-leaders%2Felon-musk&ved=0CBUQjRxqFwoTCOCAyYiRlpIDFQAAAAAdAAAAABAH&opi=89978449",
+    img: "https://futureoflife.org/wp-content/uploads/2020/08/elon_musk_royal_society.jpg",
     wiki: "https://en.wikipedia.org/wiki/Elon_Musk"
   },
   {
