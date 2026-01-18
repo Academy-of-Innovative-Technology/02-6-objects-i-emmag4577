@@ -1,23 +1,23 @@
 var theranos = {
-	first: "Elizabeth",
-	last: "Holmes",
-	year: 1984,
-	college: [
-		"St. John University", "Stanford University"
-	],
-	img: "https://startupi.com.br/wp-content/uploads/2023/08/20160711elizabeth-holmes.jpg",
-    wiki: "https://en.wikipedia.org/wiki/Elizabeth_Holmes"
+  firstName: "Elizabeth",
+  lastName: "Holmes",
+  age: new Date().getFullYear() - 1984,
+  education: [
+    "St. John University",
+    "Stanford University"
+  ],
+  img: "https://startupi.com.br/wp-content/uploads/2023/08/20160711elizabeth-holmes.jpg",
+  wiki: "https://en.wikipedia.org/wiki/Elizabeth_Holmes"
 };
+
 
 titles[0].innerText = `${theranos.lastName}, ${theranos.firstName}`;
 let currentYear = new Date().getFullYear();
 texts[0].innerText = `Year Born: ${currentYear - theranos.age}`;
-texts[1].innerHTML =
-  `First College: ${theranos.education[0]}<br>
-   Second College: ${theranos.education[1]}`;
-
+texts[1].innerHTML = ...
 imgs[0].src = theranos.img;
 buttons[0].href = theranos.wiki;
+
 
 var elonMusk = {
   firstName: "Elon",
@@ -52,13 +52,17 @@ var hero = {
 var profiles = [theranos, elonMusk, hero];
 
 profiles.forEach((person, index) => {
-    imgs[index].src = person.img;
-      titles[index].innerText = `${person.lastName}, ${person.firstName}`;
- let eduText = "";
+  imgs[index].src = person.img;
+  titles[index].innerText = `${person.lastName}, ${person.firstName}`;
+
+  texts[index * 2].innerText =
+    `Year Born: ${new Date().getFullYear() - person.age}`;
+
+  let eduText = "";
   person.education.forEach((school, i) => {
     eduText += `${i + 1} College: ${school}<br>`;
   });
 
   texts[index * 2 + 1].innerHTML = eduText;
-   buttons[index].href = person.wiki;
+  buttons[index].href = person.wiki;
 });
